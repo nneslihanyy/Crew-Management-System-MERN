@@ -13,7 +13,7 @@ const CreateEmployeePage = () => {
       setLoading(true);
 
       try {
-        const response = await fetch(`${apiUrl}/api/employees`);
+        const response = await fetch(`${apiUrl}/api/categories`);
 
         if (response.ok) {
           const data = await response.json();
@@ -78,19 +78,19 @@ const CreateEmployeePage = () => {
       <Form name="basic" layout="vertical" onFinish={onFinish} form={form}>
       
         <Form.Item
-          label="Ürün İsmi"
+          label="Gemi Adamı İsmi&Soyismi"
           name="name"
           rules={[
             {
               required: true,
-              message: "Lütfen ürün adını girin!",
+              message: "Lütfen ad soyad giriniz!",
             },
           ]}
         >
           <Input />
         </Form.Item>
         <Form.Item
-          label="Ürün Kategorisi"
+          label="Gemi Adamı Kategorisi"
           name="category"
           rules={[
             {
@@ -109,12 +109,12 @@ const CreateEmployeePage = () => {
         </Form.Item>
 
         <Form.Item
-          label="Fiyat"
+          label="Maaş"
           name="current"
           rules={[
             {
               required: true,
-              message: "Lütfen ürün fiyatını girin!",
+              message: "Lütfen maaş bilgisini giriniz!",
             },
           ]}
         >
@@ -122,12 +122,12 @@ const CreateEmployeePage = () => {
         </Form.Item>
 
         <Form.Item
-          label="Ürün Açıklaması"
+          label="Gemi Adamı Bilgileri"
           name="description"
           rules={[
             {
               required: true,
-              message: "Lütfen bir ürün açıklaması girin!",
+              message: "Lütfen gemi adamı detay bilgilerini giriniz!",
             },
           ]}
         >
@@ -136,26 +136,15 @@ const CreateEmployeePage = () => {
           }} />
         </Form.Item>
 
-        <Form.Item
-          label="İndirim Oranı"
-          name="discount"
-          rules={[
-            {
-              required: true,
-              message: "Lütfen bir ürün indirim oranı girin!",
-            },
-          ]}
-        >
-          <InputNumber />
-        </Form.Item>
+        
 
         <Form.Item
-          label="Ürün Görselleri (Linkler)"
+          label="Gemi Adamı Görselleri (Linkler)"
           name="img"
           rules={[
             {
               required: true,
-              message: "Lütfen en az 4 ürün görsel linki girin!",
+              message: "Lütfen en az 4 gemi adamı görsel linki girin!",
             },
           ]}
         >
@@ -164,36 +153,8 @@ const CreateEmployeePage = () => {
           autoSize={{ minRows: 4}}/>
         </Form.Item>
 
-        <Form.Item
-          label="Ürün Renkleri (RGB Kodları)"
-          name="colors"
-          rules={[
-            {
-              required: true,
-              message: "Lütfen en az 1 ürün rengi girin!",
-            },
-          ]}
-        >
-          <Input.TextArea 
-          placeholder="Her bir RGB kodunu yeni bir satıra yazın."
-          autoSize={{ minRows: 4}}/>
-        </Form.Item>
+     
 
-        <Form.Item
-          label="Ürün Bedenleri"
-          name="sizes"
-          rules={[
-            {
-              required: true,
-              message: "Lütfen en az 1 ürün beden ölçüsü girin!",
-            },
-          ]}
-        >
-          <Input.TextArea 
-          placeholder="Her bir beden ölçüsünü yeni bir satıra yazın."
-          autoSize={{ minRows: 4}}/>
-          
-        </Form.Item>
 
         
 

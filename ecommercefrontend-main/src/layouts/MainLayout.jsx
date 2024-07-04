@@ -18,11 +18,8 @@ useEffect(() => {
 }, []);
   return (
     <div className="main-layout">
-      
-      <Search isSearchShow={isSearchShow} setIsSearchShow={setIsSearchShow} />
       <Header setIsSearchShow={setIsSearchShow}/>
       {children}
-      
     </div>
   );
 };
